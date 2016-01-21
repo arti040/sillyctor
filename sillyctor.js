@@ -8,7 +8,10 @@
 
 "use strict";
 var $ = function (selector) {
-  var elements = [], el, tag, tmpEl, sLen, parentNode, i = 0, j = 0;
+  var elements = [],
+  el, tag, tmpEl, sLen, parentNode,
+  i = 0, j = 0;
+
   /*
    * Check if hash's location is other than the beginning of the selector
    * and if it's true, get rid of the text (tag) part of the selector.
@@ -19,6 +22,7 @@ var $ = function (selector) {
     selector = '#' + selector[selector.length - 1];
     selector = selector.split('.')[0];
   }
+
   selector = selector.split(' ');
   sLen = selector.length;
 
@@ -31,15 +35,14 @@ var $ = function (selector) {
       return document.getElementById(selector);
     },
     get: function(classOrElement,selector,parentNode) {
-      var k = 0, arr = [], gw = (classOrElement === 'class') ?
+      var k = 0, m = 0, arr = [], gw = (classOrElement === 'class') ?
         'getElementsByClassName' : 'getElementsByTagName';
 
       if(parentNode.length) {
         while(parentNode[k]) {
           /* We need to convert NodeList to Array */
-          Array.prototype.push
-          .apply(arr,Array.prototype.slice.call(parentNode[i][gw](selector)));
-          i++;
+          Array.prototype.slice.call(parentNode[i][gw](selector));
+          m++;
         }
       }
       /* If parentNode has no length, it's a single element then */
