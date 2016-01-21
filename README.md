@@ -3,10 +3,11 @@
 # Introduction
 This is a simple selector engine, for educational purpose ONLY.
 
-The package contains 3 files:
+The package contains 4 files:
 - test.html contains the HTML sillyctor.js will be tested on
 - test.js contains a function which will provide results for sillyctor.js in the developer console
 - sillyctor.js script
+- sillyctor-bad.js script - the very first and VERY bad approach ;-)
 
 # Running the test
 Open test.html in a web browser (IE8+, Chrome, Firefox or Safari) and check the developer console for the test results. The template sillyctor.js should show 1 of 7 tests passed (as one of the answers should be an empty array)
